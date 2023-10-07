@@ -19,6 +19,22 @@ class EMart:
             sys.exit(1000)
 
     def register(self):
-        pass
+        name=input("Enter the name: ")
+        email=input("Email:")
+        password=input("password:")
+        respo=self.db.register(name,email,password)
+        if respo:
+            print("reg sucesful")
+        else:
+            print("failed")
+        self.menu()
+
+
+
+    def login(self):
+        email= input("Enter email pls.")
+        password= input("Enter password")
+        self.db.search(email,password)
+
 
 obj=EMart()
